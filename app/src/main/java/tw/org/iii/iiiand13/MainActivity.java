@@ -25,11 +25,20 @@ public class MainActivity extends AppCompatActivity {
         WebViewClient webViewCliet = new WebViewClient();
         webView.setWebViewClient(webViewCliet);//用戶端的角色
 
-        //呈現javascript
-        WebSettings webSettings = webView.getSettings();
-        webSettings.setJavaScriptEnabled(true);
 
-        webView.loadUrl("https://www.iii.org.tw");
+        WebSettings webSettings = webView.getSettings();
+        //webSettings.setUseWideViewPort(true);
+        //webSettings.setLoadWithOverviewMode(true);
+
+        webSettings.setJavaScriptEnabled(true); //呈現javascript
+        //webSettings.setSupportZoom(true);
+        //webSettings.setBuiltInZoomControls(true);
+        //webSettings.setDisplayZoomControls(true);
+        webView.loadUrl("file:///android_asset/brad.html");//檔案系統的通訊協定,講一個東西,資產不要加s
+
+
+
+        //與網頁溝通,需要用js
     }
 
     @Override
